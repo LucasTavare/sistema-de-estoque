@@ -1,0 +1,53 @@
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+aside {
+    height: 100vh;
+    background-color: rgba(255, 140, 0, 0.829);
+    padding: 10px;
+}
+
+h3 {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    margin-top: 15%;
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font: 14px;
+}
+
+.corpo{
+    height: 80vh;
+    border: 1px;
+    margin: 70px auto;
+    display: grid;
+    align-items: center;
+    box-shadow: 2px 2px 1px 1px gray;
+    width: 80%;
+}
+
+.form-cadastro{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 0 auto;
+    margin: 50px;
+}
+
+.input-cadastro{
+    width: 200px;
+}
+
+input{
+    width: 45%;
+}

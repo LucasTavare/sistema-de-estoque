@@ -14,7 +14,8 @@ const validaLogin = () =>{
                 icon: result.retorno == 'ok' ? 'success' : 'error'
             })
 
-            result.retorno == 'ok' ? window.location.replace("http://stackoverflow.com") : ''
+            
+            result.retorno == 'ok' ? window.location.replace("http://localhost/sistema-de-estoque/paginaInicial.php") : ''
 
         })
 
