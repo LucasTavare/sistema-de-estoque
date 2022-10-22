@@ -27,9 +27,9 @@
       <aside>
         <h3>Menu Doc`s Fast</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Cadastro de itens</a></li>
-            <li><a href="#">Listagem</a></li>
+            <li><a href="paginaInicial.php">Home</a></li>
+            <li><a href="cadastro.php">Cadastro de itens</a></li>
+            <li><a href="listarProduto.php">Listagem</a></li>
           </ul>
       </aside>
 

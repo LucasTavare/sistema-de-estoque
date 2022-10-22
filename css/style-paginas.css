@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .menu {
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -21,13 +26,35 @@ ul {
     display: grid;
 }
 
+li{
+    padding: 10px;
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
     color: white;
     font: 14px;
 }
 
-.corpo{
+a:hover{
+    padding: 5px;
+    background-color: white;
+    color: rgba(255, 140, 0, 0.829);
+    border: 1px solid rgba(255, 140, 0, 0.829);
+    border-radius: 30px;
+}
+
+.corpo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin: 0 auto;
+    margin: 50px;
+    width: 500px;
+}
+
+.form-cadastro {
     height: 80vh;
     border: 1px;
     margin: 70px auto;
@@ -37,17 +64,61 @@ a {
     width: 80%;
 }
 
-.form-cadastro{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin: 0 auto;
-    margin: 50px;
-}
-
-.input-cadastro{
-    width: 200px;
-}
-
 input{
-    width: 45%;
+    width: 400px;
+    height: 30px;
+}
+
+.btn-confirmar{
+    width: 100px;
+    height: 40px;
+    color: azure;
+    background-color: rgba(255, 140, 0, 0.829);
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-confirmar:hover{
+    width: 100px;
+    height: 40px;
+    color: rgba(255, 140, 0, 0.829);
+    background-color: azure;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 2px solid;
+}
+
+/* listagem */
+
+#container{
+    display: grid;
+    align-items: center;
+    margin: 100px;
+    margin: auto 0;
+}
+
+.table{
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+.table th{
+    background-color: rgb(255, 140, 0);
+}
+
+.th{
+    color: white;
+}
+
+tr{
+    border: none;
+}
+tr:nth-child(even){
+    background-color: white;
+}
+
+tr:nth-child(odd){
+    background-color: rgba(255, 201, 136, 0.829);
 }
