@@ -66,7 +66,11 @@ const listProduto = () => {
                 <td>${usuario.fornecedor}</td>
                 <td>R$ ${usuario.valor_unitario}</td>
                 <td>${usuario.estoque}</td>
-                <td>botoes<td>
+                <td class="botoes">
+                <button type="button" class="btn btn-outline-secondary mb-4" onclick="saida(${usuario.id})">Saida</button>
+                <button type="button" class="btn btn-outline-secondary mb-4" onclick="entrada()">Entrada</button>
+
+                <td>
             </tr>
             
         
@@ -75,4 +79,32 @@ const listProduto = () => {
             })
 
             
+}
+
+const saida = (id) => {
+    const modalEditar = new bootstrap.Modal('#modal')
+
+        modalEditar.show()
+    const result = fetch(`backend/ListUserUpdate.php`, {
+        method: 'POST',
+        body: `id=${id}`,
+        headers: {
+            'Content-type': 'application/x-www-form-urlencoded'
+        }
+    })
+    .then((response) => response.json())
+    .then((result) => {
+
+        console.log(result)
+
+        $('#modal-nome').val(result.nome)
+        $('#modal-marca').val(result.marca)
+        $('#modal-fornecedor').val(result.fornecedor)
+        $('#modal-valorUnit').val(result.valor_unitario)
+        $('#modal-estoque').val(result.estoque)
+
+
+        
+})
+
 }

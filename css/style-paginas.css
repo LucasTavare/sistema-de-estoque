@@ -1,5 +1,6 @@
 *{
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -11,13 +12,13 @@
 aside {
     height: 100vh;
     background-color: rgba(255, 140, 0, 0.829);
-    padding: 10px;
 }
 
 h3 {
-    font-size: 26px;
+    font-size: 24px;
     color: white;
     font-weight: bold;
+    padding-left: 10px;
 }
 
 ul {
@@ -27,21 +28,21 @@ ul {
 }
 
 li{
-    padding: 10px;
+    padding: 15px;
     font-weight: bold;
 }
 
 a {
     text-decoration: none;
     color: white;
-    font: 14px;
+    font: 12px;
+    padding: 0;
 }
 
 a:hover{
     padding: 5px;
     background-color: white;
     color: rgba(255, 140, 0, 0.829);
-    border: 1px solid rgba(255, 140, 0, 0.829);
     border-radius: 30px;
 }
 
@@ -121,4 +122,17 @@ tr:nth-child(even){
 
 tr:nth-child(odd){
     background-color: rgba(255, 201, 136, 0.829);
+}
+
+/* ================ modal =================== */
+
+#att-pro{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    
+}
+
+.input-modal input{
+    width: 200px; 
 }
