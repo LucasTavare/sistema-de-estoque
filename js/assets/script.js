@@ -2,6 +2,8 @@ $(document).ready(function() {
 
     listProduto()
 
+    listAcoes()
+
 });
 
 const validaLogin = () => {
@@ -82,7 +84,7 @@ const listProduto = () => {
 }
 
 const saida = (id) => {
-    const modalEditar = new bootstrap.Modal('#modal')
+    const modalEditar = new bootstrap.Modal('#modal-saida')
 
         modalEditar.show()
     const result = fetch(`backend/ListUserUpdate.php`, {
@@ -102,9 +104,55 @@ const saida = (id) => {
         $('#modal-fornecedor').val(result.fornecedor)
         $('#modal-valorUnit').val(result.valor_unitario)
         $('#modal-estoque').val(result.estoque)
-
-
-        
+        $('#modal-id').val(result.id)
+    
 })
+}
 
+const fazerSaida = () => {
+    const dados = new FormData($('#att-pro')[0]);
+
+    dados.append('amount', $('#modal-estoque').val());
+
+    const result = fetch('backend/entrada-saida.php', {
+        method: 'POST',
+        body: dados
+    })
+        .then((response) => response.json())
+        .then((result) => {
+
+            Swal.fire({
+                title: 'Atenção',
+                text: result.retorno == 'ok' ? "Cadastro realizado com sucesso!" : result.Mensagem,
+                icon: result.retorno == 'ok' ? 'success' : 'error'
+            })
+
+            
+        })
+
+}
+
+const listAcoes = () => {
+    const result = fetch('backend/selectAcao.php', {
+        method: 'POST',
+        body: ''
+    })
+
+        .then((response) => response.json())
+        .then((result) => {
+
+            result.map(usuario => {
+                $('#acao').append(`
+        
+            <tr>
+                <td scope="row">${usuario.id}</td>
+                <td>${usuario.nome}</td>
+                <td>${usuario.tipo}</td>
+                <td>${usuario.quantidade}</td>
+            </tr>
+            
+        
+        `)
+        })
+            })
 }

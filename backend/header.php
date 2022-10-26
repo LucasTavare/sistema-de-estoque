@@ -21,6 +21,7 @@
             <li><a href="paginaInicial.php">Home</a></li>
             <li><a href="cadastro.php">Cadastro de itens</a></li>
             <li><a href="listarProduto.php">Listagem</a></li>
+            <li><a href="listarAcoes.php">Entrada e Saida</a></li>
           </ul>
       </aside>
 

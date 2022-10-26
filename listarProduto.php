@@ -21,7 +21,7 @@
   </table>
 
 
-  <div class="modal" id="modal" tabindex="-1">
+  <div class="modal" id="modal-saida" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -33,9 +33,13 @@
           <form action="" method="POST" id="att-pro">
 
 
+          <div class="input-modal text-center">
+              <label for="modal-id">ID produto</label>
+              <input type="text" id="modal-id" name="modal-id">
+            </div>
             <div class="input-modal text-center">
               <label for="modal-nome">Nome</label>
-              <input type="text" id="modal-nome" name="modal-nome" disabled>
+              <input type="text" id="modal-nome" name="modal-nome">
             </div>
             <div class="input-modal text-center">
               <label for="modal-marca">Marca</label>
@@ -51,7 +55,17 @@
             </div>
             <div class="input-modal text-center">
               <label for="modal-estoque">Estoque</label>
-              <input type="number" id="modal-estoque" name="modal-estoque">
+              <input type="number" id="modal-estoque" name="modal-estoque" disabled>
+            </div>
+            <div class="input-modal text-center">
+              <label for="modal-quantidade">Quantidade</label>
+              <input type="number" id="modal-quantidade" name="modal-quantidade">
+            </div>
+            <div class="input-modal text-center">
+              <select class="input-modal" name="tipo" id="tipo">
+                <option value="1">Entrada</option>
+                <option value="2">Saida</option>
+              </select>
             </div>
 
           </form>
@@ -60,7 +74,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" onclick="fazerSaida()">Save changes</button>
         </div>
       </div>
     </div>
