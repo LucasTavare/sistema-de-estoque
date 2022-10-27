@@ -13,6 +13,7 @@ const validaLogin = () => {
         method: 'POST',
         body: dados
     })
+
         .then((response) => response.json())
         .then((result) => {
 
